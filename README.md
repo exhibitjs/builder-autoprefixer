@@ -1,6 +1,8 @@
-# exhibit-builder-autoprefixer [![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
+# exhibit-builder-autoprefixer
 
 > [Exhibit.js](https://github.com/exhibitjs/exhibit) builder plugin for transforming CSS files with [Autoprefixer](https://github.com/postcss/autoprefixer).
+
+[![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
 
 
 ## Installation
