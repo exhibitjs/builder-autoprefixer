@@ -3,9 +3,11 @@ import postcss from 'postcss';
 
 export default function (browsers) {
   const plugin = autoprefixer({browsers});
-  const processor = postcss([ plugin ]);
+  const processor = postcss([plugin]);
 
   return function exhibitAutoprefixer(path, contents) {
+    if (!path.endsWith('.css')) return contents;
+
     return processor
       .process(contents.toString(), {
         map: true,
