@@ -1,13 +1,8 @@
-##### exhibit.js builder
-
 # autoprefixer
 
-> Adds vendor prefixes to CSS with [Autoprefixer](https://github.com/postcss/autoprefixer).
-
-[![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
-
-[![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
-
+> **[Exhibit.js](https://github.com/exhibitjs/exhibit) builder**. Adds vendor prefixes to CSS with [Autoprefixer](https://github.com/postcss/autoprefixer).
+> 
+> [![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
 
 ## Installation
 
@@ -24,7 +19,7 @@ Can be called with an options object:
   .use('autoprefixer', options)
 ```
 
-Or just the `browsers` option if you're happy with the other defaults:
+...or just the `browsers` option, if you're happy with the other defaults:
 
 ```js
 exhibit()
@@ -35,7 +30,7 @@ exhibit()
 
 ## Options
 
-In addition to the usual [Autoprefixer options](https://github.com/postcss/autoprefixer#options) (including `browsers`), there is one extra option.
+In addition to the usual [Autoprefixer options](https://github.com/postcss/autoprefixer#options), there is one extra option.
 
 ##### `include` 
 
