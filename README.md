@@ -1,6 +1,10 @@
-# exhibit-builder-autoprefixer [![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
+##### exhibit.js builder
 
-> [Exhibit.js](https://github.com/exhibitjs/exhibit) builder plugin for transforming CSS files with [Autoprefixer](https://github.com/postcss/autoprefixer).
+# autoprefixer
+
+> Adds vendor prefixes to CSS with [Autoprefixer](https://github.com/postcss/autoprefixer).
+
+[![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
 
 
 ## Installation
@@ -12,11 +16,30 @@ $ npm install --save-dev exhibit-builder-autoprefixer
 
 ## Usage
 
+Can be called with an options object:
+
 ```js
-exhibit('src')
-  .use('autoprefixer')
-  .build('dist');
+  .use('autoprefixer', options)
 ```
+
+Or just the `browsers` option if you're happy with the other defaults:
+
+```js
+exhibit()
+  .use('autoprefixer', ['> 1%', 'IE 7'])
+  .build('app', 'dist');
+```
+
+
+## Options
+
+In addition to the usual [Autoprefixer options](https://github.com/postcss/autoprefixer#options) (including `browsers`), there is one extra option.
+
+##### `include` 
+
+Default: `**/*.css`
+
+Which files should be processed by this extension. (All other files will be passed through unmodified.)
 
 
 ## License
