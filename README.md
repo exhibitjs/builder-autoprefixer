@@ -6,6 +6,8 @@
 
 [![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
 
+[![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
+
 
 ## Installation
 
