@@ -1,25 +1,28 @@
-# autoprefixer
-
-> **[Exhibit.js](https://github.com/exhibitjs/exhibit) builder**. Adds vendor prefixes to CSS with [Autoprefixer](https://github.com/postcss/autoprefixer).
-> 
-> [![NPM version][npm-image]][npm-url] [![Dependency Status][depstat-image]][depstat-url]
-
-## Installation
-
-```sh
-$ npm install --save-dev exhibit-builder-autoprefixer
-```
+> # autoprefixer
+>
+> **Exhibit.js builder plugin**
+>
+> Adds vendor prefixes to CSS files with [Autoprefixer](https://github.com/postcss/autoprefixer).
+>
+> ```sh
+> $ npm install -D exhibit-builder-autoprefixer
+> ```
+>
+> [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url] [![devDependency Status][devdepstat-image]][devdepstat-url] [![peerDependency Status][peerdepstat-image]][peerdepstat-url]
 
 
 ## Usage
 
-Can be called with an options object:
+Can be configured with an options object:
 
 ```js
-  .use('autoprefixer', options)
+  .use('autoprefixer', {
+    browsers: ['> 1%', 'IE 7'],
+    cascade: false
+  })
 ```
 
-...or just the `browsers` option, if you're happy with the other defaults:
+...or just the `browsers` option alone:
 
 ```js
 exhibit()
@@ -30,14 +33,16 @@ exhibit()
 
 ## Options
 
-In addition to the usual [Autoprefixer options](https://github.com/postcss/autoprefixer#options), there is one extra option.
+You may set any of the usual [Autoprefixer options](https://github.com/postcss/autoprefixer#options).
 
-##### `include` 
+#### Additional options
 
-Default: `**/*.css`
+> **`include`** (string/array/function) — default: `**/*.css`
 
-Which files should be processed by this extension. (All other files will be passed through unmodified.)
+Which files to process. Follows Exhibit’s [glob convention](https://github.com/exhibitjs/exhibit/blob/master/docs/glob-convention.md).
 
+
+---
 
 ## License
 
@@ -48,8 +53,14 @@ MIT
 [npm-url]: https://npmjs.org/package/exhibit-builder-autoprefixer
 [npm-image]: https://img.shields.io/npm/v/exhibit-builder-autoprefixer.svg?style=flat-square
 
-[travis-url]: http://travis-ci.org/exhibitjs/exhibit-builder-autoprefixer
-[travis-image]: https://img.shields.io/travis/exhibitjs/exhibit-builder-autoprefixer.svg?style=flat-square
+[travis-url]: http://travis-ci.org/exhibitjs/builder-autoprefixer
+[travis-image]: https://img.shields.io/travis/exhibitjs/builder-autoprefixer.svg?style=flat-square
 
-[depstat-url]: https://david-dm.org/exhibitjs/exhibit-builder-autoprefixer
-[depstat-image]: https://img.shields.io/david/exhibitjs/exhibit-builder-autoprefixer.svg?style=flat-square
+[depstat-url]: https://david-dm.org/exhibitjs/builder-autoprefixer
+[depstat-image]: https://img.shields.io/david/exhibitjs/builder-autoprefixer.svg?style=flat-square
+
+[devdepstat-url]: https://david-dm.org/exhibitjs/builder-autoprefixer#info=devDependencies
+[devdepstat-image]: https://img.shields.io/david/dev/exhibitjs/builder-autoprefixer.svg?style=flat-square&label=devDeps
+
+[peerdepstat-url]: https://david-dm.org/exhibitjs/builder-autoprefixer#info=peerDependencies
+[peerdepstat-image]: https://img.shields.io/david/peer/exhibitjs/builder-autoprefixer.svg?style=flat-square&label=peerDeps

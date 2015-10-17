@@ -15,12 +15,12 @@ export default function (options) {
   }
   else options = Object.assign({}, defaults, options);
 
-  // configure a postcss processor for reuse on every job
+  // configure a postcss processor to reuse on every job
   const plugin = autoprefixer(options);
   const processor = postcss([plugin]);
 
   // return the builder
-  return function exhibitAutoprefixer({matches, contents}) {
+  return function exhibitAutoprefixer({file, matches, contents, util}) {
     // check if it matches
     if (!matches(options.include)) return contents;
 
@@ -30,7 +30,11 @@ export default function (options) {
       })
       .then(result => {
         result.warnings().forEach(warn => {
-          console.warn(warn.toString()); // TODO: SourceError
+          this.emit(new util.SourceError({
+            file,
+            message: warn.toString(),
+            warning: true,
+          }));
         });
 
         return result.css;
